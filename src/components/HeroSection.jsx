@@ -33,10 +33,10 @@ const HeroSection = () => {
   const timerComponents = Object.keys(timeLeft).map((interval) => (
     <span
       key={interval}
-      className="mx-2 text-xl md:text-3xl font-mono text-sky-300 animate-pulse"
+      className="mx-2 text-2xl md:text-4xl font-bold text-white animate-pulse"
     >
       {timeLeft[interval] < 10 ? `0${timeLeft[interval]}` : timeLeft[interval]}
-      <span className="block text-xs md:text-sm text-white uppercase">{interval}</span>
+      <span className="block text-sm md:text-lg text-sky-200 uppercase">{interval}</span>
     </span>
   ));
 
@@ -55,17 +55,19 @@ const HeroSection = () => {
 
       {/* Main Text */}
       <div className="relative z-10 text-center animate-fade-in-up">
-        <h2 className="text-2xl md:text-3xl mb-2 tracking-wider text-sky-200">
+        <h2 className="text-2xl md:text-3xl mb-2 tracking-wider text-sky-200 font-semibold">
           UBIT Presents
         </h2>
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-xl">
+        <h1 className="text-6xl md:text-8xl font-extrabold mb-8 drop-shadow-xl leading-tight">
           CareerConnect'25
         </h1>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10 px-4">
           <button
             onClick={() => handleScroll('registration')}
-            className="bg-sky-600 hover:bg-sky-500 transform hover:scale-105 transition duration-300 text-white px-6 py-2 rounded-lg"
+            className="bg-sky-600 hover:bg-sky-500 transform hover:scale-105 transition duration-300 text-white px-6 py-2 rounded-lg 
+            
+            "
           >
             Register Now
           </button>
@@ -81,11 +83,11 @@ const HeroSection = () => {
       {/* Countdown Timer at Bottom */}
       {!isEventOver && (
         <div className="absolute bottom-6 w-full flex justify-center z-10">
-          <div className="bg-sky-900/80 px-6 py-3 rounded-full shadow-md flex backdrop-blur">
+          <div className="flex gap-4">
             {timerComponents.length > 0 ? (
               timerComponents
             ) : (
-              <span className="text-lg text-green-400">Event is Live!</span>
+              <span className="text-2xl font-bold text-green-400">Event is Live!</span>
             )}
           </div>
         </div>

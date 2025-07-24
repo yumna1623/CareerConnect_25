@@ -1,56 +1,41 @@
 import React from 'react';
 
 const Schedule = () => {
+  const schedule = [
+    { time: '09:00 AM', event: 'Opening Ceremony' },
+    { time: '10:00 AM', event: 'Keynote Session' },
+    { time: '11:00 AM', event: 'Panel Discussion' },
+    { time: '12:00 PM', event: 'Resume Clinic' },
+    { time: '01:00 PM', event: 'Lunch Break' },
+    { time: '02:00 PM', event: 'Networking Session' },
+    { time: '03:00 PM', event: 'Mock Interviews' },
+    { time: '04:00 PM', event: 'Giveaway & Swag Time' },
+    { time: '05:00 PM', event: 'Closing Remarks' },
+  ];
+
   return (
-    <section className="bg-sky-900 py-16 px-6">
-      <h2 className="text-3xl font-semibold text-center mb-8">Event Schedule</h2>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse border border-sky-800 text-white">
-          <thead>
-            <tr className="bg-sky-800">
-              <th className="border border-sky-700 px-4 py-2">Time</th>
-              <th className="border border-sky-700 px-4 py-2">Event</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">09:00 AM</td>
-              <td className="border border-sky-700 px-4 py-2">Opening Ceremony</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">10:00 AM</td>
-              <td className="border border-sky-700 px-4 py-2">Keynote Session</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">11:00 AM</td>
-              <td className="border border-sky-700 px-4 py-2">Panel Discussion</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">12:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Resume Clinic</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">01:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Lunch Break</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">02:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Networking Session</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">03:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Mock Interviews</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">04:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Giveaway & Swag Time</td>
-            </tr>
-            <tr>
-              <td className="border border-sky-700 px-4 py-2">05:00 PM</td>
-              <td className="border border-sky-700 px-4 py-2">Closing Remarks</td>
-            </tr>
-          </tbody>
-        </table>
+    <section className="bg-gradient-to-b from-white via-blue-50 to-white py-20 px-4 md:px-10">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-sky-900">Event Schedule</h2>
+        <p className="text-sky-600 mt-2 text-lg">Plan your day with confidence</p>
+      </div>
+
+      <div className="max-w-4xl mx-auto space-y-4">
+        {schedule.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white border border-sky-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-sky-50"
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="text-sky-700 font-semibold text-lg md:text-xl">
+                {item.time}
+              </div>
+              <div className="text-gray-800 text-base md:text-lg font-medium">
+                {item.event}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
