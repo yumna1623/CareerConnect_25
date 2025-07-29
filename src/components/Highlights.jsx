@@ -1,42 +1,77 @@
-import { Briefcase, FileText, Mic, Users, Building2, Code } from 'lucide-react';
+import {
+  Briefcase,
+  FileText,
+  Mic,
+  Users,
+  Building2,
+  Code,
+  Lightbulb,
+  Rocket,
+  ShieldCheck,
+  MessageSquare
+} from 'lucide-react';
 
 const Highlights = () => {
   const highlights = [
     {
-      title: 'Keynote Talks',
+      title: 'Industry Engagement & Recruitment',
       description:
-        'Hear from tech leaders and industry pioneers about career trends and future opportunities.',
-      icon: <Mic className="text-sky-600 w-8 h-8" />,
-    },
-    {
-      title: 'Resume Clinics',
-      description:
-        'Get expert feedback on your resume and learn how to stand out to recruiters.',
-      icon: <FileText className="text-sky-600 w-8 h-8" />,
-    },
-    {
-      title: 'Mock Interviews',
-      description:
-        'Practice your interview skills with HR professionals and receive constructive insights.',
+        'Direct interaction between students and professionals to align academic curricula with evolving market needs.',
       icon: <Briefcase className="text-sky-600 w-8 h-8" />,
     },
     {
-      title: 'Networking Zone',
+      title: 'Panel Discussions & Seminars',
       description:
-        'Meet employers, alumni, and peers to build meaningful career connections.',
+        'Sessions with tech industry giants to foster innovation and entrepreneurship among students.',
+      icon: <Mic className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Skill Development Workshops',
+      description:
+        'Hands-on training in IT tools, resume writing, interview skills, and personal branding.',
+      icon: <Code className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Alumni Networking',
+      description:
+        'Reconnecting with alumni to share career insights and foster continuous learning.',
       icon: <Users className="text-sky-600 w-8 h-8" />,
     },
     {
-      title: 'Company Booths',
+      title: 'Innovation Showcases',
       description:
-        'Explore booths from participating companies and discover exciting job roles.',
+        'Presentation of student-led startups and projects to a broad range of employers.',
+      icon: <Lightbulb className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Interactive Challenges',
+      description:
+        'Hackathons, coding contests, and problem-solving challenges to test and highlight student talent.',
+      icon: <Rocket className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Career Counseling & Resume Clinics',
+      description:
+        'One-on-one sessions with career professionals for personalized guidance and resume reviews.',
+      icon: <FileText className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Tech Demonstrations',
+      description:
+        'Live demonstrations and product launches from participating companies.',
       icon: <Building2 className="text-sky-600 w-8 h-8" />,
     },
     {
-      title: 'Skill Workshops',
+      title: 'Emerging Tech Workshops',
       description:
-        'Participate in practical workshops on coding, communication, and personal branding.',
-      icon: <Code className="text-sky-600 w-8 h-8" />,
+        'Hands-on learning in AI, Blockchain, Cybersecurity, and other emerging technologies.',
+      icon: <ShieldCheck className="text-sky-600 w-8 h-8" />,
+    },
+    {
+      title: 'Feedback & Improvement',
+      description:
+        'Feedback systems to collect insights from attendees and continuously enhance future fests.',
+      icon: <MessageSquare className="text-sky-600 w-8 h-8" />,
     },
   ];
 
@@ -44,7 +79,7 @@ const Highlights = () => {
     <section className="bg-gray-50 py-20 px-6">
       <div className="text-center mb-14">
         <p className="text-base uppercase text-sky-600 font-semibold tracking-widest">
-          Year After Year, We Make It Happen
+          Signature Features of Career Fest 2025
         </p>
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">
           Event Highlights
