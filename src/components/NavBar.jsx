@@ -17,7 +17,7 @@ const Navbar = () => {
           onClick={() => handleScroll('home')}
           className="text-lg sm:text-xl font-bold tracking-wide cursor-pointer"
         >
-          CareerConnect
+          CareerFest
         </div>
 
         {/* Desktop Menu */}

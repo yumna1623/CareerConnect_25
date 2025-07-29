@@ -119,14 +119,7 @@ const Contact = () => {
             >
               <FaLinkedinIn />
             </a>
-            <a
-              href="https://twitter.com/uok_official"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-sky-800 hover:scale-110 transition-transform"
-            >
-              <FaTwitter />
-            </a>
+           
           </div>
         </div>
       </div>
