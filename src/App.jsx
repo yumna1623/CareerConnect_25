@@ -29,12 +29,12 @@ function App() {
       <StrategicObjectives/>
       <LogisticsFacilities/>
       <Schedule />
+      <RegistrationForm />
       <Contact />
       <ManagementTeam/>
       <Footer />
       {/* <Speakers /> */}
       {/* <FAQ /> */}
-      {/* <RegistrationForm /> */}
       {/* <AboutUBIT /> */}
       {/* <Sponsors /> */}
     </div>

@@ -3,7 +3,9 @@ import ubitImage from "../assets/UBIT2.jpg"; // Confirm the path is correct
 
 const AboutEvent = () => {
   return (
-    <section className="bg-gradient-to-b from-sky-900 to-sky-950 min-h-screen flex items-center px-6 md:px-10 py-20">
+    <section
+    id="about"
+    className="bg-gradient-to-b from-sky-900 to-sky-950 min-h-screen flex items-center px-6 md:px-10 py-20">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
         {/* Text Section */}
         <div className="md:w-1/2 text-left border-l-4 border-blue-500 pl-6">

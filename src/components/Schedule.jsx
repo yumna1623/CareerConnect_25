@@ -53,7 +53,9 @@ const Schedule = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-20 px-4 md:px-10">
+    <section
+    id='agenda'
+    className="bg-gray-50 py-20 px-4 md:px-10">
       <div className="text-center mb-16">
         <h2 className="text-5xl font-extrabold text-gray-800 leading-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">

@@ -49,6 +49,7 @@ const HeroSection = () => {
 
   return (
     <section
+    id="home"
       className="relative h-screen bg-cover bg-center bg-no-repeat text-white px-4 flex flex-col items-center justify-center"
       style={{ backgroundImage: `url(${UbitImage})` }}
     >
@@ -81,6 +82,7 @@ const HeroSection = () => {
           </button>
           <button
             onClick={() => handleScroll('agenda')}
+            
             className="border border-white hover:bg-white hover:text-sky-900 transform hover:scale-105 transition duration-300 px-6 py-2 rounded-lg"
           >
             View Agenda
