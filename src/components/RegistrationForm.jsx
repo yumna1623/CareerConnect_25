@@ -1,51 +1,22 @@
-import React from 'react';
-import { FaUser, FaEnvelope, FaBuilding, FaPaperPlane } from 'react-icons/fa';
+import React from "react";
 
 const RegistrationForm = () => {
   return (
-    <section className="bg-sky-900 py-20 px-6">
-      <div className="max-w-xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl shadow-xl p-10 border border-white/20">
-        <h2 className="text-4xl font-bold text-white text-center mb-10">Register Now</h2>
+    <section className="bg-red-100 px-4 py-34" id="register">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-[#760a0a] text-center mb-8">
+          Join the CareerFest 2025 Team
+        </h2>
 
-        <form className="space-y-6 text-white">
-          <div className="flex items-center gap-3 bg-white/10 border border-white/30 rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-white">
-            <FaUser className="text-white/80 text-lg" />
-            <input
-              type="text"
-              id="fullName"
-              placeholder="Full Name"
-              className="w-full bg-transparent placeholder-white/80 text-white focus:outline-none"
-            />
-          </div>
-
-          <div className="flex items-center gap-3 bg-white/10 border border-white/30 rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-white">
-            <FaEnvelope className="text-white/80 text-lg" />
-            <input
-              type="email"
-              id="email"
-              placeholder="Email Address"
-              className="w-full bg-transparent placeholder-white/80 text-white focus:outline-none"
-            />
-          </div>
-
-          <div className="flex items-center gap-3 bg-white/10 border border-white/30 rounded-lg px-4 py-2 focus-within:ring-2 focus-within:ring-white">
-            <FaBuilding className="text-white/80 text-lg" />
-            <input
-              type="text"
-              id="department"
-              placeholder="Department"
-              className="w-full bg-transparent placeholder-white/80 text-white focus:outline-none"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold py-3 rounded-lg transition duration-200"
+        <div className="w-full overflow-hidden rounded shadow-md">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScdOsK2xnfzDTlnCBLtJCm-kiAWO0yvmPo1ZlGd0_Ns14vfPQ/viewform?embedded=true"
+            className="w-full min-h-[1800px] sm:min-h-[1500px] md:min-h-[1600px] lg:min-h-[1800px] border-0"
+            title="CareerConnect Registration"
           >
-            <FaPaperPlane className="text-white" />
-            Submit
-          </button>
-        </form>
+            Loading…
+          </iframe>
+        </div>
       </div>
     </section>
   );

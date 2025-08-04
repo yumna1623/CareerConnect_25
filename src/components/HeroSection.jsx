@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import UbitImage from '../assets/ubit.png'; // Make sure the image is sharp and high resolution
+import React, { useState, useEffect } from "react";
+import UbitImage from "../assets/ubit.png";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
-  const eventDate = new Date('2025-08-01T09:00:00+05:00').getTime();
+  const navigate = useNavigate();
+  const handleNavigate = () => navigate("/register");
+
+  const eventDate = new Date("2025-09-30T09:00:00+05:00").getTime();
 
   const calculateTimeLeft = () => {
     const difference = eventDate - new Date().getTime();
@@ -33,68 +37,71 @@ const HeroSection = () => {
   const timerComponents = Object.keys(timeLeft).map((interval) => (
     <span
       key={interval}
-      className="mx-2 text-xl sm:text-3xl md:text-4xl font-bold text-white animate-pulse"
+      className="mx-1 sm:mx-2 text-xl sm:text-2xl md:text-4xl font-bold text-white animate-pulse"
     >
       {timeLeft[interval] < 10 ? `0${timeLeft[interval]}` : timeLeft[interval]}
-      <span className="block text-xs sm:text-sm md:text-base text-sky-200 uppercase">
+      <div className="text-xs sm:text-sm text-red-200 uppercase">
         {interval}
-      </span>
+      </div>
     </span>
   ));
 
   const handleScroll = (id) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
-    id="home"
-      className="relative h-screen bg-cover bg-center bg-no-repeat text-white px-4 flex flex-col items-center justify-center"
+      id="home"
+      className="relative h-screen bg-cover bg-center bg-no-repeat text-white flex items-center justify-center px-10 sm:px-8"
       style={{ backgroundImage: `url(${UbitImage})` }}
     >
-      {/* Keep subtle dark overlay for text readability */}
-<div className="absolute inset-0 bg-sky-900/10 backdrop-brightness-95 z-0" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#760a0a]/20 backdrop-brightness-90 z-0" />
 
-      <div className="relative z-10 text-center max-w-4xl px-4">
-        <h2 className="text-lg sm:text-2xl md:text-3xl mb-2 tracking-wide text-sky-200 font-medium">
+      {/* Content */}
+      <div className="relative z-10 text-center max-w-4xl w-full pt-24 sm:pt-28">
+        <h2 className="text-lg sm:text-lg md:text-xl text-[#760a0a] mb-1 font-bold sm:font-medium">
           UBIT Presents
         </h2>
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 drop-shadow-xl leading-tight">
-          CareerConnect'25
+        <h1 className="text-5xl sm:text-6xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-xl">
+          Career Fest'25
         </h1>
 
-        <p className="text-md sm:text-lg md:text-xl font-medium text-sky-100 mb-6">
-          “Empowering Futures through Opportunity, Innovation, and Collaboration”
-        </p>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-red-100 mb-4 font-semibold">
+  “Empowering Futures through Opportunity, Innovation, and Collaboration”
+</p>
 
-        <p className="text-sm sm:text-base text-sky-100 mb-8">
-          Organized by the Department of Computer Science,<br />
+        <p className="text-sm sm:text-base md:text-lg  text-red-100 mb-6 font-medium">
+          Organized by the Department of Computer Science,
+          <br />
           University of Karachi
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 mb-8 px-2">
           <button
-            onClick={() => handleScroll('registration')}
-            className="bg-sky-600 hover:bg-sky-500 transform hover:scale-105 transition duration-300 text-white px-6 py-2 rounded-lg"
+            onClick={handleNavigate}
+            className="bg-[#760a0a] hover:bg-red-800 px-6 py-2 rounded-lg text-sm sm:text-base font-semibold transition transform hover:scale-105"
           >
             Register Now
           </button>
           <button
-            onClick={() => handleScroll('agenda')}
-            
-            className="border border-white hover:bg-white hover:text-sky-900 transform hover:scale-105 transition duration-300 px-6 py-2 rounded-lg"
+            onClick={() => handleScroll("agenda")}
+            className="border border-white px-6 py-2 rounded-lg text-sm sm:text-base font-semibold hover:bg-white hover:text-[#760a0a] transition transform hover:scale-105"
           >
             View Agenda
           </button>
         </div>
-      </div>
 
-      {!isEventOver && (
-        <div className="absolute bottom-6 w-full flex justify-center z-10">
-          <div className="flex gap-4">{timerComponents}</div>
-        </div>
-      )}
+        {/* Countdown Timer */}
+        {!isEventOver && (
+          <div className="flex justify-center gap-2 sm:gap-4 mt-4">
+            {timerComponents}
+          </div>
+        )}
+      </div>
     </section>
   );
 };

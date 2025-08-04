@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleScroll = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollOrNavigate = (id) => {
     setIsOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // Allow time for homepage to render
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -14,22 +26,23 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Brand */}
         <div
-          onClick={() => handleScroll('home')}
+          onClick={() => handleScrollOrNavigate('home')}
           className="text-lg sm:text-xl font-bold tracking-wide cursor-pointer"
         >
-          CareerFest
+          CareerConnect
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 font-medium text-sm sm:text-base">
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('home')}>Home</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('about')}>About Us</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('sponsors')}>Sponsors</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('registration')}>Register</li>
+          <li className="cursor-pointer hover:text-[#760a0a]" onClick={() => handleScrollOrNavigate('home')}>Home</li>
+          <li className="cursor-pointer hover:text-[#760a0a]" onClick={() => handleScrollOrNavigate('about')}>About Us</li>
+          <li className="cursor-pointer hover:text-[#760a0a]" onClick={() => handleScrollOrNavigate('highlights')}>Highlights</li>
+          <li className="cursor-pointer hover:text-[#760a0a]" onClick={() => handleScrollOrNavigate('sponsors')}>Sponsors</li>
+          <li className="cursor-pointer hover:text-[#760a0a]" onClick={() => handleScrollOrNavigate('contact')}>Contact</li>
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden focus:outline-none">
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden focus:outline-none text-black">
           <svg className="w-6 h-6" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
             {isOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -43,10 +56,10 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <ul className="md:hidden mt-4 space-y-2 font-medium text-center text-sm sm:text-base transition-all duration-300">
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('home')}>Home</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('about')}>About Us</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('sponsors')}>Sponsors</li>
-          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScroll('registration')}>Register</li>
+          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScrollOrNavigate('home')}>Home</li>
+          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScrollOrNavigate('about')}>About Us</li>
+          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScrollOrNavigate('sponsors')}>Sponsors</li>
+          <li className="cursor-pointer hover:text-sky-300" onClick={() => handleScrollOrNavigate('contact')}>Contact</li>
         </ul>
       )}
     </nav>

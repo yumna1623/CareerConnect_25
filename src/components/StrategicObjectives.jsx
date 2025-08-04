@@ -31,14 +31,14 @@ const objectives = [
 
 const StrategicObjectives = () => {
   return (
-    <section className="bg-sky-900 py-20 px-6 text-sky-100">
+    <section className="overflow-x-hidden bg-gradient-to-b from-[#760a0a] to-[#4d0505] py-16 px-4 sm:px-6 lg:px-8 text-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold flex justify-center items-center gap-3 text-white">
-            <FaBullseye className="text-sky-300" />
+          <h2 className="text-3xl sm:text-4xl font-bold flex justify-center items-center gap-3 text-white">
+            {/* <FaBullseye className="text-white" /> */}
             Strategic Objectives - Career Fest 2025
           </h2>
-          <p className="text-lg text-sky-300 mt-2">
+          <p className="text-base sm:text-lg text-white mt-2">
             Our goals for empowering students, connecting with industry, and fostering innovation.
           </p>
         </div>
@@ -47,13 +47,15 @@ const StrategicObjectives = () => {
           {objectives.map((obj, index) => (
             <div key={index} className="flex gap-4 items-start">
               <div className="flex-shrink-0">
-                <div className="h-10 w-10 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-lg shadow-md">
+                <div className="min-w-[2.5rem] h-10 rounded-full bg-[#940e0e] text-white flex items-center justify-center font-bold text-base sm:text-lg shadow-md">
                   {index + 1}
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white">{obj.title}</h3>
-                <p className="text-sky-200 mt-2 text-justify">{obj.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold">{obj.title}</h3>
+                <p className="mt-1 text-sm sm:text-base text-white text-justify break-words">
+                  {obj.description}
+                </p>
               </div>
             </div>
           ))}

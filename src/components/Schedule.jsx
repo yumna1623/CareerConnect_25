@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Schedule = () => {
@@ -21,13 +20,13 @@ const Schedule = () => {
     {
       time: '11:00 – 12:00',
       event: 'TED-style Talk',
-      eventDetail: '(Concurrent Session)', // Added for clarity on concurrent events
+      eventDetail: '(Concurrent Session)',
       description: 'Topic: "Thinking at Scale: Navigating Your Tech Career".',
     },
     {
       time: '12:00 – 13:00',
       event: 'Panel Discussion',
-      eventDetail: '(Concurrent Session)', // Added for clarity on concurrent events
+      eventDetail: '(Concurrent Session)',
       description: 'Insights from industry leaders on emerging technologies.',
     },
     {
@@ -53,23 +52,23 @@ const Schedule = () => {
   ];
 
   return (
-    <section
-    id='agenda'
-    className="bg-gray-50 py-20 px-4 md:px-10">
+    <section id="agenda" className="bg-white py-20 px-4 md:px-10 text-[#760a0a]">
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-extrabold text-gray-800 leading-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6b1486] to-[#962424]">
             Career Fest 2025
           </span>{' '}
           Agenda
         </h2>
-        <p className="text-gray-600 mt-4 text-xl max-w-2xl mx-auto">
+        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-[#760a0a]">
           Join us for a day of insights, networking, and opportunities designed to elevate your tech career.
         </p>
-        <p className="text-gray-500 mt-2 text-base">
-          **Venue:** Department of Computer Science (UBIT), University of Karachi{' '}
-          <span className="mx-2">|</span> **Date:** To Be Announced{' '}
-          <span className="mx-2">|</span> **Estimated Attendance:** 1,000–2,500 participants
+        <p className="mt-2 text-sm md:text-base text-[#5e2c2c]">
+          <strong>Venue:</strong> Department of Computer Science (UBIT), University of Karachi
+          <span className="mx-2">|</span>
+          <strong>Date:</strong> To Be Announced
+          <span className="mx-2">|</span>
+          <strong>Estimated Attendance:</strong> 1,000–2,500 participants
         </p>
       </div>
 
@@ -77,27 +76,24 @@ const Schedule = () => {
         {schedule.map((item, index) => (
           <div
             key={index}
-            className="group relative bg-white border border-gray-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+            className="group relative bg-white border border-[#760a0a]/30 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
           >
-            {/* Optional: Add a subtle diagonal stripe or corner accent for visual interest */}
-            <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-500 transform -skew-y-12 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-top-left"></div>
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#760a0a] to-[#a12a2a] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-10">
-              <div className="text-blue-700 font-bold text-xl md:text-2xl w-full md:w-1/4 flex-shrink-0">
+              <div className="font-bold text-lg md:text-xl w-full md:w-1/4 flex-shrink-0 text-[#760a0a]">
                 {item.time}
               </div>
               <div className="w-full md:w-3/4">
-                <div className="text-gray-900 font-extrabold text-lg md:text-xl leading-snug">
+                <div className="font-semibold text-lg md:text-xl text-[#760a0a]">
                   {item.event}
                   {item.eventDetail && (
-                    <span className="ml-2 text-blue-500 text-sm font-semibold block md:inline-block">
+                    <span className="ml-2 text-[#a12a2a] text-sm font-medium block md:inline-block">
                       {item.eventDetail}
                     </span>
                   )}
                 </div>
-                <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-[#5e2c2c] text-sm mt-2 leading-relaxed">{item.description}</p>
               </div>
             </div>
           </div>

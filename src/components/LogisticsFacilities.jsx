@@ -1,9 +1,16 @@
 import React from 'react';
-import { FaBuilding, FaUtensils, FaHeadset, FaParking, FaHospital, FaThLarge } from 'react-icons/fa';
+import {
+  FaBuilding,
+  FaUtensils,
+  FaHeadset,
+  FaParking,
+  FaHospital,
+  FaThLarge,
+} from 'react-icons/fa';
 
 const logisticsData = [
   {
-    icon: <FaBuilding className="text-sky-700 text-2xl" />,
+    icon: <FaBuilding className="text-[#760a0a] text-2xl" />,
     title: 'Venue & Infrastructure',
     points: [
       'Spacious Exhibition Halls accommodating over 50 employer booths.',
@@ -13,7 +20,7 @@ const logisticsData = [
     ],
   },
   {
-    icon: <FaThLarge className="text-sky-700 text-2xl" />,
+    icon: <FaThLarge className="text-[#760a0a] text-2xl" />,
     title: 'Booth & Exhibition Setup',
     points: [
       '10x10 ft. booth space with tables, chairs, and power outlets.',
@@ -22,7 +29,7 @@ const logisticsData = [
     ],
   },
   {
-    icon: <FaUtensils className="text-sky-700 text-2xl" />,
+    icon: <FaUtensils className="text-[#760a0a] text-2xl" />,
     title: 'Refreshments & Hospitality',
     points: [
       'Complimentary tea, coffee, and snacks.',
@@ -31,7 +38,7 @@ const logisticsData = [
     ],
   },
   {
-    icon: <FaHeadset className="text-sky-700 text-2xl" />,
+    icon: <FaHeadset className="text-[#760a0a] text-2xl" />,
     title: 'Audio-Visual & Technical Support',
     points: [
       'Modern AV systems for presentations.',
@@ -40,7 +47,7 @@ const logisticsData = [
     ],
   },
   {
-    icon: <FaParking className="text-sky-700 text-2xl" />,
+    icon: <FaParking className="text-[#760a0a] text-2xl" />,
     title: 'Parking & Accessibility',
     points: [
       'Ample parking space at UBIT premises.',
@@ -48,7 +55,7 @@ const logisticsData = [
     ],
   },
   {
-    icon: <FaHospital className="text-sky-700 text-2xl" />,
+    icon: <FaHospital className="text-[#760a0a] text-2xl" />,
     title: 'Health & Safety Measures',
     points: [
       'On-site medical assistance available.',
@@ -60,18 +67,23 @@ const logisticsData = [
 
 const LogisticsFacilities = () => {
   return (
-    <section className="bg-white text-gray-800 py-20 px-6">
+    <section className="bg-white text-[#760a0a] py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-sky-900 mb-12">Logistics & Facilities</h2>
+        <h2 className="text-4xl font-bold text-center text-[#760a0a] mb-12">
+          Logistics & Facilities
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {logisticsData.map((item, index) => (
-            <div key={index} className="bg-sky-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+            <div
+              key={index}
+              className="bg-[#fef2f2] p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300"
+            >
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-sky-100 rounded-full">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-sky-800">{`${index + 1}. ${item.title}`}</h3>
+                <div className="p-3 bg-[#fbe9e9] rounded-full">{item.icon}</div>
+                <h3 className="text-xl font-semibold">{`${index + 1}. ${item.title}`}</h3>
               </div>
-              <ul className="list-disc list-inside text-gray-700 space-y-2 pl-1">
+              <ul className="list-disc list-inside space-y-2 pl-1 text-[#760a0a]/90">
                 {item.points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
